@@ -40,6 +40,24 @@ public class MasterPool : MonoBehaviour
 
     }
 
+    public bool AreAnyActive<T>(T mono) where T : MonoBehaviour
+    {
+        if (!pools.ContainsKey(mono))
+        {
+            return false;
+        }
+
+        foreach (var obj in pools[mono])
+        {
+            if (obj.gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     T InstantiateObject<T>(T mono) where T : MonoBehaviour
     {
         var obj = Instantiate(mono, null);

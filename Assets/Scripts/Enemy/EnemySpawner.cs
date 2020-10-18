@@ -12,6 +12,9 @@ public class EnemySpawner : MonoBehaviour
     SpawnObject legDayPrefab = null;
 
     [SerializeField]
+    MonoBehaviour enemyPrefabSpawn;
+
+    [SerializeField]
     Vector3 minSpawn = new Vector3();
 
     [SerializeField]
@@ -47,7 +50,8 @@ public class EnemySpawner : MonoBehaviour
         totalTime += Time.deltaTime;
         elapsed += Time.deltaTime;
         var parameters = GetParamsForSpawn();
-        if (elapsed >= parameters.y)
+        if (elapsed >= parameters.y || (!MasterPool.Pool.AreAnyActive(enemyPrefabSpawn) &&
+            !MasterPool.Pool.AreAnyActive(legDayPrefab) && !MasterPool.Pool.AreAnyActive(smallEnemyPrefab)))
         {
             elapsed = 0;
             Spawn(parameters.z);

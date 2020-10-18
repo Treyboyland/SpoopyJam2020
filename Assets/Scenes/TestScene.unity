@@ -716,6 +716,8 @@ MonoBehaviour:
     type: 3}
   legDayPrefab: {fileID: 7996250188899126871, guid: 1048b3d55053fc24d88627058ad2bf6f,
     type: 3}
+  enemyPrefabSpawn: {fileID: 4638599673324521760, guid: 997da666eb9b84e44991986ea0964c4a,
+    type: 3}
   minSpawn: {x: -7.5, y: -4.25, z: 0}
   smallGuySpawnProbability: 0.75
   maxSpawn: {x: 7.5, y: 4, z: 0}
