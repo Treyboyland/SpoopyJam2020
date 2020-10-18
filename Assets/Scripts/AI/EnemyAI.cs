@@ -39,18 +39,35 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Reinitialize();
+    }
+
+    private void OnEnable()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            Reinitialize();
+        }
+    }
+
+    void Reinitialize()
+    {
         //Start in an idle state
         isIdle = true;
         finishedWalking = true;
         isWalking = false;
         isKicked = false;
-        playerCharacter = Player.PlayerInstance.gameObject;
-        playSpace = PlaySpace.Instance;
+        playerCharacter = Player.PlayerInstance != null ? Player.PlayerInstance.gameObject : playerCharacter;
+        playSpace = playSpace == null ? PlaySpace.Instance : playSpace;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (isKicked)
+        {
+            return;
+        }
         if (chase)
         {
             targetPosition = playerCharacter.transform.position;
@@ -65,7 +82,7 @@ public class EnemyAI : MonoBehaviour
         {
             //Roll a random number
             float roll = Random.value;
-            Debug.Log(roll);
+            //Debug.Log(roll);
             //If criterion are met, then set a new target location and move towards it
             if (roll < walkFreq && !isWalking && finishedWalking)
             {

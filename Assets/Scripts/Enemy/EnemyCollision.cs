@@ -35,6 +35,10 @@ public class EnemyCollision : MonoBehaviour
     {
         if (enemy.IsHurtByBullets)
         {
+            if (enemyOther.IsInfected)
+            {
+                enemy.ApplyDamageOverTime(1, 2);
+            }
             return;
         }
 
@@ -42,17 +46,17 @@ public class EnemyCollision : MonoBehaviour
         {
             enemyOther.Kill();
             ScoreCounter.Counter.Score += (int)(2.5 * enemyOther.Points);
-            enemy.ApplyDamageOverTime(2, 20);
+            enemy.ApplyDamageOverTime(1, 5);
         }
     }
 
 
     void HandleCollision(Player player)
     {
-        if (enemy.IsInfected)
-        {
-            return;
-        }
+        // if (enemy.IsInfected)
+        // {
+        //     return;
+        // }
 
         player.Lives--;
     }

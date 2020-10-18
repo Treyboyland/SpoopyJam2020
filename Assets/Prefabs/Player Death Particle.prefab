@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8722304711694711217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 615084954640397765, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: efb13bbb249761742a0f832988db6937, type: 3}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239437346438294428, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: ClampVelocityModule.drag.scalar
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663529, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_Name
+      value: Player Death Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663534, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6698113
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.024592942
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877992144380663535, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58,
+        type: 3}
+      propertyPath: ClampVelocityModule.drag.scalar
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4bdd7a2cc8386b4c9ca8d24c759bd58, type: 3}

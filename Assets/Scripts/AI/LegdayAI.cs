@@ -16,6 +16,7 @@ public class LegdayAI : MonoBehaviour
     public bool finishedCharging;
     public bool isMovingLeft;
     public bool recentlyCharged;
+    public bool isKicked;
 
     //Windup timer
     public int windupTimerDefault;
@@ -51,7 +52,21 @@ public class LegdayAI : MonoBehaviour
     void Start()
     {
         //Start in an idle state
+        Reinitialize();
+    }
+
+    private void OnEnable()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            Reinitialize();
+        }
+    }
+
+    void Reinitialize()
+    {
         isIdle = true;
+        isKicked = false;
         finishedWalking = true;
         isWalking = false;
         isWindingUp = false;
@@ -60,7 +75,7 @@ public class LegdayAI : MonoBehaviour
         windupTimer = windupTimerDefault;
         chargeRefactoryPeriod = chargeRefactoryPeriodDefault;
         maxChargeTime = maxChargeTimeDefault;
-        playerCharacter = Player.PlayerInstance.gameObject;
+        playerCharacter = Player.PlayerInstance != null ? Player.PlayerInstance.gameObject : playerCharacter;
         playSpace = PlaySpace.Instance;
     }
 
@@ -76,6 +91,10 @@ public class LegdayAI : MonoBehaviour
                 chargeRefactoryPeriod = chargeRefactoryPeriodDefault;
                 recentlyCharged = false;
             }
+        }
+        if (isKicked)
+        {
+            return;
         }
         float toCharge = Random.value;
         if (toCharge < chargeFreq && finishedCharging) isWindingUp = true;

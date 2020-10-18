@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerShoot : MonoBehaviour
     float elapsed = 0;
 
     public const string FIRE_COMMAND = "Fire1";
+
+    public UnityEvent OnBulletFired = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -43,5 +46,6 @@ public class PlayerShoot : MonoBehaviour
         bullet.transform.rotation = transform.rotation;
 
         bullet.gameObject.SetActive(true);
+        OnBulletFired.Invoke();
     }
 }

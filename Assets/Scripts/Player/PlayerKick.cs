@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerKick : MonoBehaviour
 {
     [SerializeField]
+    AudioSource source = null;
+
+    [SerializeField]
+    AudioClip clip = null;
+
+    [SerializeField]
     float secondsBetweenKicks = 0;
 
     [SerializeField]
@@ -59,17 +65,24 @@ public class PlayerKick : MonoBehaviour
 
     public void KickTest()
     {
+        source.PlayOneShot(clip);
         var mousePos = playerMouse.MouseToWorldPoint();
+
+        mousePos.z = transform.position.z;
+        mousePos -= transform.position;
+        mousePos = Vector3.RotateTowards(transform.right, mousePos, 2 * Mathf.PI, 2 * Mathf.PI);
+        Debug.DrawRay(transform.position, mousePos, Color.white, 1);
         var raycast = Physics2D.Raycast(transform.position, mousePos,
             raycastDistance, LayerMask.GetMask("Enemy"));
 
         if (raycast.collider != null)
         {
             Debug.LogWarning("Collision Found");
-            var enemyBody = raycast.collider.GetComponent<Rigidbody2D>();
+            var enemyBody = raycast.collider.GetComponent<IKickHandler>();
             if (enemyBody != null)
             {
-                enemyBody.AddForce(mousePos.normalized * kickPower, ForceMode2D.Impulse);
+                Debug.LogWarning(mousePos.normalized);
+                enemyBody.Kick(mousePos.normalized * kickPower, ForceMode2D.Impulse);
             }
         }
         else

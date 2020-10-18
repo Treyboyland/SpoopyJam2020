@@ -37,7 +37,7 @@ public class PlaySpace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isInBounds(0, 0));
+        //Debug.Log(isInBounds(0, 0));
     }
 
     public bool isInBounds(int x, int y)

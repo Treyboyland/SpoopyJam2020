@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletCollision : MonoBehaviour
 {
     [SerializeField]
-    Bullet bullet;
+    Bullet bullet = null;
 
     static PlayerBulletParticlePool pool;
 
