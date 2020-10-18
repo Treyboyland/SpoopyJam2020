@@ -7,6 +7,8 @@ public class BulletCollision : MonoBehaviour
     [SerializeField]
     Bullet bullet;
 
+    static PlayerBulletParticlePool pool;
+
     void HandleBullet(Enemy enemy)
     {
         if (!enemy.IsHurtByBullets)
@@ -26,6 +28,20 @@ public class BulletCollision : MonoBehaviour
         }
     }
 
+    void SpawnParticle()
+    {
+        if (pool == null)
+        {
+            pool = Object.FindObjectOfType<PlayerBulletParticlePool>();
+        }
+        if (pool != null)
+        {
+            var particle = pool.GetObject();
+            particle.transform.position = transform.position;
+            particle.gameObject.SetActive(true);
+        }
+    }
+
     void HandleBullet(Player player)
     {
         //Remove a life
@@ -37,6 +53,7 @@ public class BulletCollision : MonoBehaviour
     /// </summary>
     void DisableIfNeeded()
     {
+        SpawnParticle();
         if (!bullet.IsPiercing)
         {
             gameObject.SetActive(false);

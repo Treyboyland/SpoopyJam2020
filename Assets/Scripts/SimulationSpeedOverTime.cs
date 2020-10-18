@@ -5,13 +5,13 @@ using UnityEngine;
 public class SimulationSpeedOverTime : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem particle;
+    ParticleSystem particle = null;
 
     [SerializeField]
-    AnimationCurve curve;
+    AnimationCurve curve = null;
 
     [SerializeField]
-    float secondsPerLoop;
+    float secondsPerLoop = 0;
 
 
 

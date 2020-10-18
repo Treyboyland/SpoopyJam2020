@@ -36,15 +36,23 @@ public class Player : MonoBehaviour
 
     public UnityEvent OnDamageTaken = new UnityEvent();
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    static Player _instance;
 
+    public static Player PlayerInstance
+    {
+        get
+        {
+            return _instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-
+        if (_instance != null && this != _instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
     }
 }

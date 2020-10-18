@@ -1,0 +1,9 @@
+2D Top Down
+Shoot/infect with mouse 
+Kick with space
+Normal enemy
+Big enemy that can only be infected by small enemy
+Hearts for lives
+Score
+
+1m 21.201s

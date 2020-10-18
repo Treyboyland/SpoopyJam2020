@@ -6,7 +6,7 @@ using UnityEngine;
 public class ConstantFowardSpeed : MonoBehaviour
 {
     [SerializeField]
-    float speed;
+    float speed = 0;
 
     Rigidbody2D body = null;
 
