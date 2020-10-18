@@ -38,6 +38,10 @@ public class EnemySpawner : MonoBehaviour
 
     const int LITTLE_DUDES_PER_BIG_DUDE = 3;
 
+
+    int spawnCount = 0;
+    const int MAX_SPAWNS_WO_BIG_DUDE = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +96,20 @@ public class EnemySpawner : MonoBehaviour
     {
         numSpawns = (int)numSpawns;
         var spawnObject = SpawnSmall() ? smallEnemyPrefab : legDayPrefab;
+
+        if (spawnObject == legDayPrefab)
+        {
+            spawnCount = 0;
+        }
+        else
+        {
+            spawnCount++;
+            if (spawnCount > MAX_SPAWNS_WO_BIG_DUDE)
+            {
+                spawnCount = 0;
+                spawnObject = legDayPrefab;
+            }
+        }
 
 
         for (int i = 0; i < numSpawns; i++)

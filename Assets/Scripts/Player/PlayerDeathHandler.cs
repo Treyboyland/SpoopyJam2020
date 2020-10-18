@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeathHandler : MonoBehaviour
 {
@@ -28,6 +29,13 @@ public class PlayerDeathHandler : MonoBehaviour
             particle.gameObject.SetActive(true);
             player.gameObject.SetActive(false);
             source.Play();
+            StartCoroutine(SendBack());
         }
+    }
+
+    IEnumerator SendBack()
+    {
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
     }
 }

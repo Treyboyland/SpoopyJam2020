@@ -35,7 +35,7 @@ public class EnemyCollision : MonoBehaviour
     {
         if (enemy.IsHurtByBullets)
         {
-            if (enemyOther.IsInfected)
+            if (enemyOther.IsInfected && !enemyOther.IsHurtByBullets)
             {
                 enemy.ApplyDamageOverTime(1, 2);
             }

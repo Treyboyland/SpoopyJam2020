@@ -138,7 +138,7 @@ public class LegdayAI : MonoBehaviour
         isIdle = false;
         isWalking = false;
         targetPosition = this.playerCharacter.transform.position;
-        this.transform.position = Vector2.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed * 4);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed * 3);
 
         if ((Vector2)this.transform.position == targetPosition)
         {
