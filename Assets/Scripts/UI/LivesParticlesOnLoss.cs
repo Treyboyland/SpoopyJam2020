@@ -7,7 +7,7 @@ public class LivesParticlesOnLoss : MonoBehaviour
     [SerializeField]
     LivesSprite sprite = null;
 
-    static EnemyDeathParticlePool pool;
+    static HeartDeathParticlePool pool;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class LivesParticlesOnLoss : MonoBehaviour
     {
         if (pool == null)
         {
-            pool = FindObjectOfType<EnemyDeathParticlePool>();
+            pool = FindObjectOfType<HeartDeathParticlePool>();
         }
     }
 

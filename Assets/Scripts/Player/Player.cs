@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
             if (value < lives)
             {
                 lives = Mathf.Max(0, value);
+                OnDamageTaken.Invoke();
             }
             else
             {
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour
     public class LivesChanged : UnityEvent<int> { }
 
     public LivesChanged OnLivesChanged = new LivesChanged();
+
+    public UnityEvent OnDamageTaken = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()

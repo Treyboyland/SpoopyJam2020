@@ -13,12 +13,22 @@ public class PlayerLookTowardsMouse : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Converts mouse position to a position in world space
+    /// </summary>
+    /// <returns></returns>
+    public Vector3 MouseToWorldPoint()
     {
         var mousePos = Input.mousePosition;
         mousePos.z = mainCamera.nearClipPlane;
         var mousePosWorld = mainCamera.ScreenToWorldPoint(mousePos);
+        return mousePosWorld;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        var mousePosWorld = MouseToWorldPoint();
         //mousePos.z = transform.position.z;
         //Assumes running on player object
         var target = mousePosWorld - transform.position;

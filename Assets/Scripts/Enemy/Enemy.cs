@@ -30,6 +30,40 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     bool isKicked = false;
 
+    public bool IsKicked
+    {
+        get
+        {
+            return isKicked;
+        }
+    }
+
+    public bool IsInfected
+    {
+        get
+        {
+            return currentHealth != health;
+        }
+    }
+
+    /// <summary>
+    /// Amount of points this enemy awards on death
+    /// </summary>
+    [SerializeField]
+    int points = 0;
+
+    /// <summary>
+    /// Amount of points this enemy awards on death
+    /// </summary>
+    /// <value></value>
+    public int Points
+    {
+        get
+        {
+            return points;
+        }
+    }
+
     private void OnEnable()
     {
         currentHealth = health;
@@ -37,6 +71,7 @@ public class Enemy : MonoBehaviour
 
     void SpawnParticle()
     {
+        ScoreCounter.Counter.Score += points;
         particlePool = particlePool == null ? Object.FindObjectOfType<EnemyDeathParticlePool>() : particlePool;
         if (particlePool != null)
         {
@@ -44,6 +79,14 @@ public class Enemy : MonoBehaviour
             particle.transform.position = transform.position;
             particle.gameObject.SetActive(true);
         }
+    }
+
+    /// <summary>
+    /// Insta-kill enemy
+    /// </summary>
+    public void Kill()
+    {
+        Damage(currentHealth);
     }
 
     public void Damage(int val)
@@ -59,6 +102,7 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamageOverTime(int dmg, int seconds)
     {
+        Debug.LogWarning("DOT: " + dmg + ", " + seconds);
         StartCoroutine(ApplyDamage(dmg, seconds));
     }
 

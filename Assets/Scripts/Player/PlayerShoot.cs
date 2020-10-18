@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour
 
     float elapsed = 0;
 
-    const string FIRE_COMMAND = "Fire1";
+    public const string FIRE_COMMAND = "Fire1";
 
     // Start is called before the first frame update
     void Start()

@@ -24,7 +24,7 @@ public class ScreenshotCapture : MonoBehaviour
             string fileName = (usePersistentDirectory ? (Application.persistentDataPath + '/') : "") + prefix + '-' + DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss-fff") + ".png";
             ScreenCapture.CaptureScreenshot(fileName, 1);
             OnScreenshotTaken.Invoke(fileName);
-            //Debug.LogWarning("Screenshot Saved at location: " + fileName);
+            Debug.LogWarning("Screenshot Saved at location: " + fileName);
         }
     }
 }
